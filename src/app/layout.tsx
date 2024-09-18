@@ -4,13 +4,26 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/logoipsum-296.svg"
 import XLogo from "@/public/twitter.png"
+import Instagram from "@/public/instagram.png"
+import LinkedIn from "@/public/linkedin.png"
+import { Bebas_Neue, Archivo } from 'next/font/google'
 
-
+// {`${bebasNeue.className}`}
 
 export const metadata: Metadata = {
   title: "Tigidy",
   description: "Task Menager by your taste",
 };
+
+const bebasNeue = Bebas_Neue({
+  subsets: ['latin'],
+  weight: "400",
+})
+
+const archivo = Archivo({
+  subsets: ['latin'],
+  weight: "400",
+})
 
 export default function RootLayout({
   children,
@@ -19,12 +32,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#dddddd]">
+      <body className={`bg-[#dddddd] ${archivo.className} overflow-x-hidden relative`}>
         <div className="flex justify-center">
           <nav className="fixed mx-auto">
             <div className="m-5 w-[80vw] h-[70px] bg-violet-700 flex justify-between px-20 items-center rounded-full">
-              <Image src={Logo} alt="Logo" width={50} height={50} />
-              <div className="flex gap-8">
+            <div className={`flex gap-1 items-center text-3xl ${bebasNeue.className}`}>
+                <Image src={Logo} alt="Logo" width={50} height={50} />
+                TIGIDY
+              </div>
+              <div className="flex gap-8 text-xl">
                 <Link href="/dashboard">Dashboard</Link>
                 <Link href="/profile">Profile</Link>
                 <Link href="/settings">Settings</Link>
@@ -34,19 +50,35 @@ export default function RootLayout({
           </nav>
         </div>
         
-        <div className="pt-[200px] w-[80vw] m-auto">
+        <div>
           {children}
           </div>
 
-          <footer className="absolute bottom-0 w-[100vw] bg-[#111111] h-fit p-20 flex">
-              <div className="flex gap-5 items-center">
+          <footer className="absolute bottom-0 w-[100vw] bg-[#111111] h-[200px] p-20 flex justify-between">
+              <div className={`flex gap-1 items-center text-2xl ${bebasNeue.className}`}>
                 <Image src={Logo} alt="Logo" width={50} height={50} />
                 TIGIDY
               </div>
-              <div>
+              <div className="flex gap-3 justify-center items-center">
+                <p>Made by NikolaJevtic</p>
+              </div>
+              <div className="flex gap-3 justify-center items-center">
                 <Link href="x.com">
-                  <Image src={XLogo} alt="Logo" width={50} height={50}/>
+                  <Image src={XLogo} alt="Twitter" width={30} height={30}/>
                 </Link>
+                <Link href="instagram.com">
+                  <Image src={Instagram} alt="Instagram" width={30} height={30}/>
+                </Link>
+                <Link href="linkedin.com">
+                  <Image src={LinkedIn} alt="LinkedIn" width={30} height={30}/>
+                </Link>
+              </div>
+              <div className="flex gap-3 justify-center items-center">
+                  <p>
+                    Without Street 123 <br />
+                    New Country <br />
+                    Since 2025 <br />
+                  </p>
               </div>
           </footer>
         
