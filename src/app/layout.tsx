@@ -32,15 +32,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-[#dddddd] ${archivo.className} overflow-x-hidden relative`}>
+      <body className={`bg-[#F5F7F8] ${archivo.className} overflow-x-hidden relative`}>
         <div className="flex justify-center">
           <nav className="fixed mx-auto">
-            <div className="m-5 w-[80vw] h-[70px] bg-violet-700 flex justify-between px-20 items-center rounded-full">
-            <div className={`flex gap-1 items-center text-3xl ${bebasNeue.className}`}>
+            <div className="m-5 w-[80vw] h-[70px] bg-[#45474B] flex justify-between px-20 items-center rounded-full">
+            <div className={`flex gap-1 items-center text-white text-3xl ${bebasNeue.className}`}>
                 <Image src={Logo} alt="Logo" width={50} height={50} />
                 TIGIDY
               </div>
-              <div className="flex gap-8 text-xl">
+              <div className="flex text-white gap-8 text-xl">
                 <Link href="/dashboard">Dashboard</Link>
                 <Link href="/profile">Profile</Link>
                 <Link href="/settings">Settings</Link>
@@ -54,8 +54,8 @@ export default function RootLayout({
           {children}
           </div>
 
-          <footer className="absolute bottom-0 w-[100vw] bg-[#111111] h-[200px] p-20 flex justify-between">
-              <div className={`flex gap-1 items-center text-2xl ${bebasNeue.className}`}>
+          <footer className="absolute bottom-0 w-[100vw] bg-[#45474B] h-[200px] p-20 flex justify-between text-white">
+              <div className={`flex text-white gap-1 items-center text-2xl ${bebasNeue.className}`}>
                 <Image src={Logo} alt="Logo" width={50} height={50} />
                 TIGIDY
               </div>
