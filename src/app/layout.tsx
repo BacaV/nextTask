@@ -32,10 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-[#F5F7F8] ${archivo.className} overflow-x-hidden relative`}>
+      <body className={`bg-[#F5F7F8] text-black ${archivo.className} overflow-x-hidden relative`}>
         <div className="flex justify-center">
           <nav className="fixed mx-auto">
-            <div className="m-5 w-[80vw] h-[70px] bg-[#45474B] flex justify-between px-20 items-center rounded-full">
+            <div className="m-5 w-[70vw] h-[70px] bg-[#45474B] flex justify-between px-20 items-center rounded-full">
             <div className={`flex gap-1 items-center text-white text-3xl ${bebasNeue.className}`}>
                 <Image src={Logo} alt="Logo" width={50} height={50} />
                 TIGIDY
